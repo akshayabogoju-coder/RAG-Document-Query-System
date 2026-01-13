@@ -1,8 +1,11 @@
 # RAG Document Query System (LangChain)
 
+An end-to-end Retrieval-Augmented Generation (RAG) application utilizing FAISS and Pinecone for semantic document search, deployed via Streamlit.
+
+---
+
 ## Problem Statement
-Traditional keyword search fails to retrieve semantically relevant information from large document sets. 
-This project solves that problem using a Retrieval-Augmented Generation (RAG) pipeline built with LangChain.
+Traditional keyword-based search often fails to retrieve semantically relevant information from large, unstructured document sets. This project addresses this challenge by implementing a RAG pipeline that combines semantic search with Large Language Models (LLMs).
 
 ---
 
@@ -11,44 +14,49 @@ This project solves that problem using a Retrieval-Augmented Generation (RAG) pi
 
 ---
 
+## Community Traction & Analytics
+The project has demonstrated consistent organic interest:
+- **Total Clones:** 51+
+- **Unique Visitors:** 37+
+
+![Community Traffic](assets/traffic-proof.png)
+
+---
+
+## Key Features
+* **Hybrid Vector Search:** Support for local indexing via FAISS and cloud-native scaling via Pinecone.
+* **Semantic Retrieval:** Uses OpenAI embeddings for high-accuracy document matching.
+* **Source Attribution:** Provides transparency by citing specific document segments used for each response.
+* **Interactive UI:** A streamlined Streamlit interface for seamless user interaction.
+
+---
+
 ## Tech Stack
-- Python
-- LangChain
-- FAISS (Local Vector Store)
-- Pinecone (Cloud Vector DB)
-- OpenAI Embeddings
-- Streamlit
+* **Core Framework:** LangChain, Python
+* **Vector Databases:** FAISS (Local), Pinecone (Cloud)
+* **LLM & Embeddings:** OpenAI (GPT models)
+* **Deployment:** Streamlit
 
 ---
 
-## How the System Works
-1. Documents are loaded and chunked using recursive text splitters.
-2. Each chunk is converted into embeddings.
-3. Embeddings are stored in FAISS (local) or Pinecone (cloud).
-4. User queries are embedded and matched using semantic similarity.
-5. Top-k relevant chunks are passed to the LLM.
-6. The LLM generates grounded, context-aware answers.
+## Workflow Process
+1. **Data Ingestion:** Documents are processed and split using Recursive Character Text Splitters.
+2. **Vectorization:** Text chunks are transformed into high-dimensional embeddings.
+3. **Indexing:** Embeddings are stored in FAISS or Pinecone for similarity search.
+4. **Contextual Retrieval:** The system retrieves the Top-K relevant chunks based on user queries.
+5. **Grounded Generation:** The LLM generates responses strictly constrained to the retrieved context.
 
 ---
 
-## FAISS vs Pinecone
-- FAISS: Fast local testing and experimentation.
-- Pinecone: Scalable, production-ready cloud vector search.
-This project demonstrates both to compare performance and deployment strategies.
+## Accuracy & Evaluation
+* **Hallucination Mitigation:** Strictly grounded in source data to ensure factual reliability.
+* **Comparison Study:** Comparative implementation of FAISS vs. Pinecone for performance benchmarking.
+* **Sample Outputs:** Validated query results are available in the `outputs/` directory.
 
 ---
 
-## Evaluation & Accuracy
-- Tested on real document queries.
-- Responses are grounded strictly on retrieved context.
-- Observed significant reduction in hallucinations compared to direct LLM prompting.
-- Sample outputs are provided in the `outputs/` folder.
+## Local Setup & Installation
 
----
-
-## How to Run Locally
-For FAISS:
+### 1. Environment Setup
 ```bash
 pip install -r requirements.txt
-streamlit run rag_faiss_app.py
-
