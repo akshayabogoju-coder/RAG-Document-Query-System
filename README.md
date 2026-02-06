@@ -16,8 +16,8 @@ Traditional keyword-based search often fails to retrieve semantically relevant i
 
 ## 🚀 Community Traction & Analytics
 This project has demonstrated significant organic interest and real-world utility:
-- **Total Clones:** 78+ (Growing 20% weekly)
-- **Unique Cloners:** 55+ in the last 14 days
+- **Total Clones:** 101+ (Growing 20% weekly)
+- **Unique Cloners:** 69+ in the last 14 days
 - **Total Views:** 191+
 - **Traffic Sources:** Organic discovery via Google and Twitter.
 
